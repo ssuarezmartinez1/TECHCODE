@@ -1,0 +1,7 @@
+<?php require_once __DIR__ . '/../../MODELO/navbar_sesion.php'; ?>
+<!DOCTYPE html><html lang="es"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Software personalizado | TechCode</title><link rel="stylesheet" href="servicios.css"><link rel="stylesheet" href="servicio-detalle.css"><link rel="stylesheet" href="../shared.css"></head><body class="tc-inner-page"><div class="background-decoration"><div class="glow glow-one"></div><div class="glow glow-two"></div><div class="grid-background"></div><div class="scan-line"></div></div>
+<?php include_once __DIR__ . '/../layouts/header.php'; ?>
+<main><section class="service-detail">
+    <div class="eyebrow">// SERVICIO TECHCODE</div>
+    <h1>Software <span>personalizado</span></h1>
+    <p>Desarrollamos sistemas adaptados a las necesidades de cada empresa, proyecto u organización para mejorar procesos y gestionar información.</p><div class="service-detail-grid"><article class="service-detail-card"><h2>01</h2><p>Sistemas personalizados</p></article><article class="service-detail-card"><h2>02</h2><p>Automatización de procesos</p></article><article class="service-detail-card"><h2>03</h2><p>Gestión de información</p></article></div><div class="service-detail-actions"><a href="servicios.php">← Ver servicios</a><a class="primary" href="../contacto/contacto.php">Solicitar servicio ↗</a></div></section></main><script src="../../CONTROLADOR/ui.js"></script></body></html>

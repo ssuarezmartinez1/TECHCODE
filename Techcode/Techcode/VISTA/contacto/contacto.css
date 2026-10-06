@@ -1,0 +1,1332 @@
+/* =========================================================
+   TECHCODE
+   CONTACTO
+   MISMO ESTILO VISUAL DE PROYECTOS / NOSOTROS
+   NEGRO + NARANJA / TECNOLÓGICO / MINIMALISTA
+   ========================================================= */
+
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+
+:root{
+    --black:#050505;
+    --black-soft:#090909;
+    --black-card:#101010;
+
+    --orange:#ff5a00;
+    --orange-light:#ff7626;
+    --orange-dark:#c94000;
+
+    --white:#fff;
+    --gray:#a7a7a7;
+    --gray-light:#d5d5d5;
+
+    --border:rgba(255,255,255,.10);
+    --border-light:rgba(255,255,255,.16);
+
+    --orange-glow:rgba(255,90,0,.18);
+    --orange-glow-strong:rgba(255,90,0,.35);
+}
+
+
+/* =========================================================
+   RESET
+   ========================================================= */
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+
+    background:var(--black);
+
+    color:var(--white);
+
+    font-family:'DM Sans',sans-serif;
+
+    overflow-x:hidden;
+}
+
+a{
+    color:inherit;
+}
+
+
+/* =========================================================
+   FONDO TECNOLÓGICO
+   ========================================================= */
+
+body::before{
+    content:"";
+
+    position:fixed;
+
+    inset:0;
+
+    pointer-events:none;
+
+    z-index:-5;
+
+    background-image:
+        linear-gradient(
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        ),
+        linear-gradient(
+            90deg,
+            rgba(255,255,255,.025) 1px,
+            transparent 1px
+        );
+
+    background-size:50px 50px;
+
+    mask-image:
+        linear-gradient(
+            to bottom,
+            #000 0%,
+            transparent 92%
+        );
+}
+
+body::after{
+    content:"";
+
+    position:fixed;
+
+    width:520px;
+    height:520px;
+
+    top:-250px;
+    right:-180px;
+
+    border-radius:50%;
+
+    background:
+        rgba(255,90,0,.07);
+
+    filter:blur(90px);
+
+    pointer-events:none;
+
+    z-index:-4;
+}
+
+
+/* =========================================================
+   NAVBAR
+   ========================================================= */
+
+.navbar{
+    height:94px; padding:0 clamp(30px,7vw,110px);
+    display:flex; align-items:center; justify-content:space-between; gap:35px;
+    position:sticky; top:0; z-index:100;
+    background:rgba(5,5,5,.86); border-bottom:1px solid var(--border);
+    backdrop-filter:blur(20px);
+}
+.navbar-side{display:flex; align-items:center; gap:16px;}
+.logo{display:inline-flex; align-items:center; text-decoration:none; color:var(--white);
+    font-family:'Space Grotesk', sans-serif; font-size:25px; font-weight:500; letter-spacing:-1.5px;}
+.logo strong{color:var(--orange); font-weight:700;}
+nav{display:flex; align-items:center; gap:clamp(20px,3vw,38px);}
+nav a{position:relative; padding:10px 0; color:var(--gray); text-decoration:none; font-size:14px; font-weight:600; transition:color .3s ease;}
+nav a:hover, nav a.active{color:var(--white);}
+.login-btn{min-height:48px; padding:0 20px; display:inline-flex; align-items:center; justify-content:center; gap:6px;
+    color:var(--white); background:transparent; border:1px solid rgba(255,90,0,.65); text-decoration:none;
+    font-size:13px; font-weight:700; transition:.35s ease;}
+.login-btn:hover{border-color:var(--orange);}
+
+/* FOOTER */
+footer{
+    min-height:115px; padding:30px 7%; display:flex; align-items:center;
+    justify-content:space-between; gap:30px; border-top:1px solid var(--border); background:#050505;
+}
+.footer-logo .logo{font-size:22px;}
+.footer-logo p{margin-top:8px; color:var(--gray); font-size:11px;}
+.footer-info{display:flex; align-items:center; gap:30px; color:rgba(255,255,255,.4);
+    font-family:monospace; font-size:10px; letter-spacing:1px; text-align:right;}
+
+@media (max-width:900px){
+    .footer-info{flex-direction:column; align-items:flex-end; gap:6px;}
+}
+/* =========================================================
+   LOGO
+   ========================================================= */
+
+.logo{
+    display:flex;
+
+    align-items:center;
+
+    text-decoration:none;
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-size:20px;
+
+    font-weight:700;
+
+    letter-spacing:-1px;
+
+    transition:
+        transform .3s ease;
+}
+
+.logo span{
+    color:var(--white);
+}
+
+.logo strong{
+    color:var(--orange);
+
+    font-weight:700;
+}
+
+.logo:hover{
+    transform:translateY(-1px);
+}
+/* =========================================================
+   NAVEGACIÓN
+   ========================================================= */
+
+nav{
+    display:flex;
+
+    align-items:center;
+
+    gap:34px;
+}
+
+nav a{
+    position:relative;
+
+    color:var(--gray);
+
+    text-decoration:none;
+
+    font-size:14px;
+
+    font-weight:500;
+
+    transition:
+        color .3s ease;
+}
+
+nav a::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+
+    bottom:-9px;
+
+    width:0;
+
+    height:1px;
+
+    background:var(--orange);
+
+    box-shadow:
+        0 0 10px var(--orange-glow-strong);
+
+    transition:
+        width .3s ease;
+}
+
+nav a:hover,
+nav a.active{
+    color:var(--white);
+}
+
+nav a:hover::before,
+nav a.active::before{
+    width:100%;
+}
+
+/* =========================================================
+   LOGIN
+   ========================================================= */
+
+.login-btn{
+    position:relative;
+
+    overflow:hidden;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:7px;
+
+    padding:11px 18px;
+
+    border:
+        1px solid rgba(255,90,0,.55);
+
+    border-radius:4px;
+
+    color:var(--white);
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    transition:
+        transform .3s ease,
+        color .3s ease,
+        border-color .3s ease;
+}
+
+.login-btn::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:var(--orange);
+
+    transform:translateX(-101%);
+
+    transition:
+        transform .35s ease;
+
+    z-index:-1;
+}
+
+.login-btn:hover::before{
+    transform:translateX(0);
+}
+
+.login-btn:hover{
+    transform:translateY(-2px);
+
+    border-color:
+        var(--orange);
+}
+
+
+/* =========================================================
+   MAIN
+   ========================================================= */
+
+main{
+    width:100%;
+}
+
+
+/* =========================================================
+   CONTACTO
+   ========================================================= */
+
+.contact{
+    position:relative;
+
+    width:min(1180px,88%);
+
+    min-height:
+        calc(100vh - 82px);
+
+    margin:0 auto;
+
+    padding:
+        90px 0
+        100px;
+
+    display:grid;
+
+    grid-template-columns:
+        1.15fr .85fr;
+
+    align-items:center;
+
+    gap:90px;
+}
+
+
+/* decoración detrás del contenido */
+
+.contact::before{
+    content:"";
+
+    position:absolute;
+
+    width:430px;
+    height:430px;
+
+    left:-210px;
+    top:100px;
+
+    border:
+        1px solid
+        rgba(255,90,0,.06);
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 100px
+        rgba(255,90,0,.04);
+
+    pointer-events:none;
+}
+
+.contact::after{
+    content:"";
+
+    position:absolute;
+
+    width:260px;
+    height:260px;
+
+    right:-100px;
+    bottom:20px;
+
+    border:
+        1px solid
+        rgba(255,90,0,.055);
+
+    transform:rotate(45deg);
+
+    pointer-events:none;
+}
+
+
+/* =========================================================
+   TEXTO DE CONTACTO
+   ========================================================= */
+
+.contact-text{
+    position:relative;
+
+    z-index:2;
+}
+
+.contact-text > span{
+    display:block;
+
+    width:max-content;
+
+    margin-bottom:25px;
+
+    color:var(--orange);
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-size:11px;
+
+    font-weight:600;
+
+    letter-spacing:2px;
+}
+
+.contact-text > span::before{
+    content:"";
+
+    display:inline-block;
+
+    width:25px;
+
+    height:1px;
+
+    margin-right:10px;
+
+    background:var(--orange);
+
+    vertical-align:middle;
+
+    box-shadow:
+        0 0 10px var(--orange);
+}
+
+
+/* =========================================================
+   TITULO
+   ========================================================= */
+
+.contact-text h1{
+    max-width:750px;
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-size:
+        clamp(
+            48px,
+            6vw,
+            78px
+        );
+
+    line-height:.99;
+
+    letter-spacing:-4px;
+
+    font-weight:700;
+}
+
+.neon-word{
+    display:block;
+
+    color:var(--orange);
+
+    text-shadow:
+        0 0 25px
+        rgba(255,90,0,.18);
+}
+
+
+/* =========================================================
+   DESCRIPCIÓN
+   ========================================================= */
+
+.contact-text > p{
+    max-width:570px;
+
+    margin-top:30px;
+
+    color:var(--gray);
+
+    font-size:16px;
+
+    line-height:1.75;
+}
+
+
+/* =========================================================
+   DATOS DE CONTACTO
+   ========================================================= */
+
+.contact-data{
+    display:grid;
+
+    grid-template-columns:
+        repeat(2,minmax(0,1fr));
+
+    gap:35px;
+
+    max-width:620px;
+
+    margin-top:45px;
+
+    padding-top:28px;
+
+    border-top:
+        1px solid var(--border);
+}
+
+.contact-data > div{
+    position:relative;
+
+    padding-left:18px;
+}
+
+.contact-data > div::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:3px;
+
+    width:2px;
+    height:38px;
+
+    background:var(--orange);
+
+    box-shadow:
+        0 0 12px
+        rgba(255,90,0,.35);
+}
+
+.contact-data strong{
+    display:block;
+
+    margin-bottom:7px;
+
+    color:var(--white);
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-size:14px;
+
+    font-weight:600;
+}
+
+.contact-data p{
+    color:var(--gray);
+
+    font-size:13px;
+
+    line-height:1.5;
+
+    word-break:break-word;
+}
+
+
+/* =========================================================
+   CAJA DE CONTACTO
+   ========================================================= */
+
+.contact-box{
+    position:relative;
+
+    z-index:3;
+
+    padding:
+        48px 42px;
+
+    background:
+        linear-gradient(
+            145deg,
+            #111,
+            #090909
+        );
+
+    border:
+        1px solid var(--border);
+
+    border-radius:2px;
+
+    box-shadow:
+        0 25px 70px
+        rgba(0,0,0,.42);
+
+    overflow:hidden;
+
+    transition:
+        transform .45s ease,
+        border-color .45s ease,
+        box-shadow .45s ease;
+}
+
+.contact-box::before{
+    content:"";
+
+    position:absolute;
+
+    left:0;
+    top:0;
+
+    width:100%;
+    height:1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            transparent,
+            var(--orange),
+            transparent
+        );
+
+    opacity:.5;
+
+    transition:
+        opacity .35s ease;
+}
+
+.contact-box::after{
+    content:"";
+
+    position:absolute;
+
+    width:220px;
+    height:220px;
+
+    right:-120px;
+    bottom:-120px;
+
+    border:
+        1px solid
+        rgba(255,90,0,.09);
+
+    border-radius:50%;
+
+    box-shadow:
+        0 0 50px
+        rgba(255,90,0,.05);
+}
+
+.contact-box:hover{
+    transform:translateY(-7px);
+
+    border-color:
+        var(--border-light);
+
+    box-shadow:
+        0 30px 75px
+        rgba(0,0,0,.5),
+        0 0 35px
+        rgba(255,90,0,.045);
+}
+
+.contact-box:hover::before{
+    opacity:.9;
+}
+
+
+/* =========================================================
+   PIXEL / ICONO
+   ========================================================= */
+
+.pixel{
+    position:relative;
+
+    width:52px;
+    height:52px;
+
+    margin-bottom:28px;
+
+    display:flex;
+
+    align-items:center;
+    justify-content:center;
+
+    color:var(--orange);
+
+    border:
+        1px solid
+        rgba(255,90,0,.4);
+
+    background:
+        rgba(255,90,0,.045);
+
+    font-size:20px;
+
+    box-shadow:
+        0 0 25px
+        rgba(255,90,0,.07);
+
+    animation:
+        floatingPixel 4s ease-in-out infinite;
+}
+
+.pixel::before,
+.pixel::after{
+    content:"";
+
+    position:absolute;
+
+    background:var(--orange);
+}
+
+.pixel::before{
+    width:5px;
+    height:5px;
+
+    top:-4px;
+    right:-4px;
+}
+
+.pixel::after{
+    width:4px;
+    height:4px;
+
+    bottom:-4px;
+    left:-4px;
+}
+
+
+/* =========================================================
+   TEXTO DE LA CAJA
+   ========================================================= */
+
+.contact-box h2{
+    position:relative;
+
+    z-index:2;
+
+    font-family:'Space Grotesk',sans-serif;
+
+    font-size:29px;
+
+    line-height:1.1;
+
+    letter-spacing:-1px;
+}
+
+.contact-box p{
+    position:relative;
+
+    z-index:2;
+
+    margin-top:15px;
+
+    max-width:430px;
+
+    color:var(--gray);
+
+    font-size:14px;
+
+    line-height:1.75;
+}
+
+
+/* =========================================================
+   BOTÓN
+   ========================================================= */
+
+.button{
+    position:relative;
+
+    z-index:2;
+
+    display:inline-flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    margin-top:30px;
+
+    padding:13px 21px;
+
+    border:
+        1px solid
+        rgba(255,90,0,.55);
+
+    border-radius:3px;
+
+    color:var(--white);
+
+    background:transparent;
+
+    text-decoration:none;
+
+    font-size:13px;
+
+    font-weight:600;
+
+    overflow:hidden;
+
+    transition:
+        color .3s ease,
+        transform .3s ease,
+        border-color .3s ease;
+}
+
+.button::before{
+    content:"";
+
+    position:absolute;
+
+    inset:0;
+
+    background:var(--orange);
+
+    transform:translateX(-101%);
+
+    transition:
+        transform .35s ease;
+
+    z-index:-1;
+}
+
+.button:hover::before{
+    transform:translateX(0);
+}
+
+.button:hover{
+    color:#fff;
+
+    border-color:
+        var(--orange);
+
+    transform:
+        translateY(-2px);
+}
+
+
+/* =========================================================
+   DECORACIONES
+   ========================================================= */
+
+.contact-box::marker{
+    display:none;
+}
+
+.contact-text::after{
+    content:"";
+
+    position:absolute;
+
+    width:7px;
+    height:7px;
+
+    left:-35px;
+    top:55%;
+
+    background:var(--orange);
+
+    box-shadow:
+        0 0 18px
+        rgba(255,90,0,.6);
+
+    animation:
+        smallPulse 2.5s ease-in-out infinite;
+}
+
+
+/* =========================================================
+   ANIMACIONES
+   ========================================================= */
+
+@keyframes floatingPixel{
+
+    0%,100%{
+        transform:
+            translateY(0)
+            rotate(0deg);
+    }
+
+    50%{
+        transform:
+            translateY(-8px)
+            rotate(3deg);
+    }
+}
+
+@keyframes smallPulse{
+
+    0%,100%{
+        opacity:.35;
+
+        transform:
+            scale(.8);
+    }
+
+    50%{
+        opacity:1;
+
+        transform:
+            scale(1.25);
+    }
+}
+
+
+/* =========================================================
+   RESPONSIVE
+   ========================================================= */
+
+@media(max-width:1000px){
+
+    .navbar{
+        padding:0 5%;
+    }
+
+    nav{
+        gap:22px;
+    }
+
+    .contact{
+        width:90%;
+
+        gap:55px;
+    }
+
+    .contact-text h1{
+        font-size:
+            clamp(
+                45px,
+                6vw,
+                68px
+            );
+    }
+}
+
+
+@media(max-width:800px){
+
+    .navbar{
+        height:auto;
+
+        min-height:78px;
+
+        padding:
+            17px 5%;
+
+        flex-wrap:wrap;
+
+        gap:18px;
+    }
+
+    nav{
+        order:3;
+
+        width:100%;
+
+        overflow-x:auto;
+
+        justify-content:flex-start;
+
+        gap:22px;
+
+        padding-bottom:3px;
+
+        scrollbar-width:none;
+    }
+
+    nav::-webkit-scrollbar{
+        display:none;
+    }
+
+    nav a{
+        white-space:nowrap;
+    }
+
+    .login-btn{
+        margin-left:auto;
+    }
+
+    .contact{
+        width:90%;
+
+        min-height:auto;
+
+        padding:
+            80px 0
+            90px;
+
+        grid-template-columns:1fr;
+
+        gap:60px;
+    }
+
+    .contact-box{
+        max-width:620px;
+
+        width:100%;
+
+        margin:0 auto;
+    }
+
+    .contact-text::after{
+        display:none;
+    }
+}
+
+
+@media(max-width:550px){
+
+    .contact{
+        padding:
+            65px 0
+            75px;
+    }
+
+    .contact-text > span{
+        font-size:9px;
+
+        letter-spacing:1.5px;
+    }
+
+    .contact-text h1{
+        font-size:43px;
+
+        letter-spacing:-2.5px;
+    }
+
+    .contact-text > p{
+        font-size:14px;
+
+        line-height:1.7;
+    }
+
+    .contact-data{
+        grid-template-columns:1fr;
+
+        gap:25px;
+
+        margin-top:35px;
+    }
+
+    .contact-box{
+        padding:
+            36px 27px;
+    }
+
+    .contact-box h2{
+        font-size:25px;
+    }
+
+    .contact-box p{
+        font-size:13px;
+    }
+}
+
+
+@media(max-width:400px){
+
+    .logo{
+        font-size:18px;
+    }
+
+    .login-btn{
+        padding:
+            9px 12px;
+
+        font-size:11px;
+    }
+
+    .contact-text h1{
+        font-size:38px;
+    }
+
+    .contact-box{
+        padding:
+            32px 22px;
+    }
+
+    .pixel{
+        width:46px;
+        height:46px;
+    }
+}
+
+
+/* =========================================================
+   REDUCIR ANIMACIONES
+   ========================================================= */
+
+@media(prefers-reduced-motion:reduce){
+
+    *,
+    *::before,
+    *::after{
+        animation:none!important;
+
+        transition:none!important;
+
+        scroll-behavior:auto!important;
+    }
+}
+
+/* =========================================================
+   TECHCODE — ANIMACIONES GLOBALES
+   Entrada suave + efectos al hacer scroll + microinteracciones
+========================================================= */
+
+@keyframes tcFadeUp {
+    from { opacity: 0; transform: translateY(32px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes tcFadeLeft {
+    from { opacity: 0; transform: translateX(-32px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes tcFadeRight {
+    from { opacity: 0; transform: translateX(32px); }
+    to   { opacity: 1; transform: translateX(0); }
+}
+
+@keyframes tcGlow {
+    0%,100% { filter: drop-shadow(0 0 0 rgba(255,90,0,0)); }
+    50% { filter: drop-shadow(0 0 14px rgba(255,90,0,.25)); }
+}
+
+@keyframes tcFloat {
+    0%,100% { transform: translateY(0); }
+    50% { transform: translateY(-7px); }
+}
+
+.tc-reveal {
+    opacity: 0;
+    transform: translateY(32px);
+    transition: opacity .75s cubic-bezier(.2,.65,.2,1),
+                transform .75s cubic-bezier(.2,.65,.2,1);
+    will-change: opacity, transform;
+}
+
+.tc-reveal.tc-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.tc-reveal.tc-left { transform: translateX(-32px); }
+.tc-reveal.tc-right { transform: translateX(32px); }
+.tc-reveal.tc-visible.tc-left,
+.tc-reveal.tc-visible.tc-right { transform: translateX(0); }
+
+.tc-delay-1 { transition-delay: .08s; }
+.tc-delay-2 { transition-delay: .16s; }
+.tc-delay-3 { transition-delay: .24s; }
+.tc-delay-4 { transition-delay: .32s; }
+.tc-delay-5 { transition-delay: .40s; }
+
+.navbar, header.navbar {
+    animation: tcFadeUp .7s ease both;
+}
+
+.logo {
+    transition: transform .3s ease, filter .3s ease;
+}
+
+.logo:hover {
+    transform: translateY(-2px) scale(1.03);
+    filter: drop-shadow(0 0 10px rgba(255,90,0,.18));
+}
+
+.hero h1, .contact-text h1, .game-header h1 {
+    animation: tcFadeUp .9s .12s cubic-bezier(.2,.65,.2,1) both;
+}
+
+.hero > span, .contact-text > span, .eyebrow {
+    animation: tcFadeLeft .7s ease both;
+}
+
+.hero p, .contact-text > p, .game-header p {
+    animation: tcFadeUp .8s .28s ease both;
+}
+
+.neon-word {
+    animation: tcGlow 3s ease-in-out infinite;
+}
+
+.project, .service-card, .card, .contact-box, .about-card, .stat, .feature-card {
+    transition: transform .4s cubic-bezier(.2,.65,.2,1),
+                border-color .4s ease,
+                box-shadow .4s ease,
+                background .4s ease;
+}
+
+.project:hover, .service-card:hover, .card:hover, .about-card:hover,
+.stat:hover, .feature-card:hover {
+    transform: translateY(-8px);
+}
+
+button, .login-btn, .back-btn, .play-btn, .game-link-card {
+    transition: transform .25s ease, box-shadow .25s ease, filter .25s ease;
+}
+
+button:hover, .login-btn:hover, .back-btn:hover {
+    transform: translateY(-3px);
+}
+
+.project-image {
+    transition: transform .6s cubic-bezier(.2,.65,.2,1);
+}
+
+.project:hover .project-image {
+    transform: scale(1.025);
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+    }
+    .tc-reveal {
+        opacity: 1 !important;
+        transform: none !important;
+    }
+}
+
+
+/* TECHCODE GENERAL VISUAL LAYER */
+/* The shared stylesheet provides the global identity.
+   These local rules only reinforce the same hierarchy. */
+
+/* TECHCODE — QUITAR DECORACIONES MOVILES ANTIGUAS */
+.background-decoration,
+.grid-background,
+.glow,
+.glow-one,
+.glow-two,
+.scan-line,
+.hero-decoration,
+.tech-card,
+.orbit,
+.orbit-one,
+.orbit-two,
+.orbit-three,
+.pixel,
+.pixel-one,
+.pixel-two,
+.pixel-three,
+.hero-logo-bg,
+.logo-float,
+.floating-logo,
+.floating-logos,
+.moving-logo,
+.logo-orbit{
+    animation:none !important;
+    display:none !important;
+}
+
+/* background-logo-cleanup: old decorative background logos only */
+.hero-logo-bg,
+.tc-hero-logo-bg,
+.logo-orbit,
+.floating-logo,
+.floating-logos,
+.moving-logo{
+    display:none !important;
+    visibility:hidden !important;
+}
+
+/* =========================================================
+   CONTACTO — CAJA PRINCIPAL MEJORADA
+   ========================================================= */
+.contact-box{
+    background:
+        linear-gradient(145deg,
+            rgba(12,22,36,.78),
+            rgba(5,10,18,.62)) !important;
+    border:1px solid rgba(255,255,255,.14) !important;
+    border-left:2px solid rgba(255,90,0,.72) !important;
+    border-radius:14px !important;
+    box-shadow:
+        0 24px 70px rgba(0,0,0,.32),
+        inset 0 1px 0 rgba(255,255,255,.07),
+        0 0 35px rgba(255,90,0,.035) !important;
+    backdrop-filter:blur(14px);
+    -webkit-backdrop-filter:blur(14px);
+}
+
+.contact-box::before{
+    height:2px !important;
+    opacity:.8 !important;
+}
+
+.contact-box::after{
+    width:260px !important;
+    height:260px !important;
+    right:-145px !important;
+    bottom:-145px !important;
+    border-color:rgba(255,90,0,.12) !important;
+    box-shadow:0 0 70px rgba(255,90,0,.08) !important;
+}
+
+.contact-box h2{
+    font-size:clamp(27px,3vw,34px) !important;
+    letter-spacing:-1.2px !important;
+}
+
+.contact-box p{
+    color:rgba(255,255,255,.68) !important;
+}
+
+.contact-box .button{
+    border-radius:7px !important;
+    background:rgba(255,90,0,.08);
+    box-shadow:0 8px 24px rgba(255,90,0,.06);
+    transition:.3s ease;
+}
+
+.contact-box .button:hover{
+    background:var(--orange);
+    color:#fff;
+    box-shadow:0 12px 30px rgba(255,90,0,.20);
+    transform:translateY(-3px);
+}
