@@ -1,0 +1,221 @@
+/* =========================================================
+   TECHCODE — TEMA CLARO (MORADO / VIOLETA / AZUL TECNOLÓGICO / NARANJA)
+   -----------------------------------------------------------------
+   Este archivo se enlaza AL FINAL en todas las páginas, después de
+   su hoja de estilos propia (style.css, nosotros.css, servicios.css,
+   proyectos.css, contacto.css, login.css) y de shared.css.
+
+   Todas esas hojas comparten el MISMO set de variables CSS
+   (--black, --black-soft, --black-card, --orange, --orange-light,
+   --orange-dark, --white, --gray, --gray-light, --border,
+   --border-light), así que redefiniéndolas aquí una sola vez se
+   actualiza el look completo del sitio sin reescribir cada página.
+
+   No es un rediseño pixel a pixel de cada sección — es una base
+   sólida, coherente y responsive. Si más adelante compartes
+   imágenes de referencia puntuales, se pueden afinar secciones
+   específicas sobre esta misma base.
+========================================================= */
+
+:root {
+
+    /* Fondos — de oscuro a claro */
+    --black: #f6f4fc;          /* fondo general de página */
+    --black-soft: #efeaf9;     /* fondo secundario / franjas */
+    --black-card: #ffffff;     /* tarjetas, paneles, inputs */
+
+    /* Acento principal: violeta/morado (antes naranja) */
+    --orange: #7c3aed;
+    --orange-light: #2f6bff;   /* usado como "azul tecnológico" en hovers/glows */
+    --orange-dark: #4c1d95;
+
+    /* Texto */
+    --white: #1c1533;          /* texto principal, antes blanco puro */
+    --gray: #5b5570;
+    --gray-light: #3a3450;
+
+    /* Bordes, ahora oscuros y sutiles sobre fondo claro */
+    --border: rgba(28,21,51,.10);
+    --border-light: rgba(28,21,51,.18);
+
+    /* Variables auxiliares usadas en proyectos/contacto */
+    --blue: #2f6bff;
+    --orange-glow: rgba(124,58,237,.16);
+    --orange-glow-strong: rgba(124,58,237,.30);
+
+    /* Naranja real, reservado para detalles puntuales */
+    --tc-detail-orange: #ff7a1a;
+    --tc-black-card: #ffffff;
+    --tc-orange: #ff7a1a;
+    --tc-orange-light: #ff9a4d;
+    --tc-border: rgba(28,21,51,.10);
+    --tc-border-light: rgba(28,21,51,.18);
+}
+
+
+/* ---------------------------------------------------------
+   FONDO GENERAL — degradado suave morado / azul / naranja
+--------------------------------------------------------- */
+
+body {
+
+    background:
+        radial-gradient(circle at 85% 8%,  rgba(124,58,237,.14), transparent 32rem),
+        radial-gradient(circle at 6% 18%,  rgba(47,107,255,.12), transparent 30rem),
+        radial-gradient(circle at 50% 95%, rgba(255,122,26,.08), transparent 34rem),
+        var(--black) !important;
+
+    color: var(--white);
+
+}
+
+
+/* ---------------------------------------------------------
+   NAVBAR — cristal claro en vez de negro translúcido
+--------------------------------------------------------- */
+
+header.navbar,
+.navbar {
+    background: rgba(255,255,255,.82) !important;
+    box-shadow: 0 4px 24px rgba(28,21,51,.06);
+}
+
+.navbar-scrolled {
+    background: rgba(255,255,255,.94) !important;
+    box-shadow: 0 10px 30px rgba(28,21,51,.10) !important;
+}
+
+#navLinks,
+header.navbar nav {
+    background: transparent;
+}
+
+@media (max-width: 900px) {
+    header.navbar nav,
+    header.navbar #navLinks,
+    .navbar nav,
+    .navbar #navLinks {
+        background: rgba(255,255,255,.98) !important;
+        backdrop-filter: blur(16px);
+        border-bottom: 1px solid var(--border);
+        border-radius: 0 0 14px 14px;
+        padding: 10px 18px 18px !important;
+    }
+}
+
+header.navbar nav a,
+.navbar nav a {
+    color: var(--gray-light);
+}
+
+header.navbar nav a.active,
+header.navbar nav a:hover,
+.navbar nav a.active,
+.navbar nav a:hover {
+    color: var(--orange);
+}
+
+
+/* ---------------------------------------------------------
+   BOTONES PRINCIPALES — gradiente morado -> azul, con
+   sombra cálida naranja como detalle
+--------------------------------------------------------- */
+
+.login-btn,
+.session-btn-primary,
+button[type="submit"],
+.cta-primary,
+.btn-primary {
+    background: linear-gradient(120deg, var(--orange) 0%, var(--orange-light) 100%) !important;
+    color: #fff !important;
+    border-color: transparent !important;
+    box-shadow: 0 8px 24px rgba(124,58,237,.28), 0 2px 10px rgba(255,122,26,.14);
+}
+
+.login-btn:hover,
+.session-btn-primary:hover,
+button[type="submit"]:hover,
+.cta-primary:hover,
+.btn-primary:hover {
+    filter: brightness(1.08);
+    box-shadow: 0 10px 30px rgba(124,58,237,.36), 0 3px 14px rgba(255,122,26,.22);
+}
+
+a.login-btn.session-active {
+    background: linear-gradient(120deg, #22c55e 0%, var(--orange-light) 120%) !important;
+}
+
+
+/* ---------------------------------------------------------
+   TARJETAS Y PANELES — de negro sólido a blanco con sombra
+--------------------------------------------------------- */
+
+.service-card,
+.about-card,
+.feature-card,
+.project,
+.stat,
+.session-panel,
+.contact-box,
+.contact-data > div {
+    box-shadow: 0 10px 30px rgba(28,21,51,.06);
+    border: 1px solid var(--border);
+}
+
+
+/* ---------------------------------------------------------
+   DETALLE NARANJA — puntos de estado, subrayados pequeños
+--------------------------------------------------------- */
+
+.status-dot,
+.small-title .status-dot {
+    background: var(--tc-detail-orange) !important;
+    box-shadow: 0 0 12px var(--tc-detail-orange) !important;
+}
+
+.small-title {
+    color: var(--tc-detail-orange) !important;
+}
+
+
+/* ---------------------------------------------------------
+   TEXTOS DE ACENTO (palabras resaltadas con var(--orange))
+   siguen tomando el nuevo morado automáticamente por la
+   redefinición de variables de arriba — sin reglas extra.
+--------------------------------------------------------- */
+
+
+/* ---------------------------------------------------------
+   SCROLLBAR Y SELECCIÓN
+--------------------------------------------------------- */
+
+::selection {
+    background: rgba(124,58,237,.25);
+    color: var(--white);
+}
+
+
+/* ---------------------------------------------------------
+   PIE DE PÁGINA
+--------------------------------------------------------- */
+
+footer,
+.footer {
+    background: var(--black-soft) !important;
+    border-top: 1px solid var(--border);
+}
+
+/* TECHCODE GENERAL VISUAL LAYER */
+/* The shared stylesheet provides the global identity.
+   These local rules only reinforce the same hierarchy. */
+
+/* background-logo-cleanup: old decorative background logos only */
+.hero-logo-bg,
+.tc-hero-logo-bg,
+.logo-orbit,
+.floating-logo,
+.floating-logos,
+.moving-logo{
+    display:none !important;
+    visibility:hidden !important;
+}
